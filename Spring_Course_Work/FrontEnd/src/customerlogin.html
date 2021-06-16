@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple POS</title>
+    <link href="assests/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assests/css/customerlogin.css" rel="stylesheet">
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-6 mx-auto p-0">
+            <div class="card">
+                <div class="login-box">
+                    <div class="login-snip"> 
+                        <input id="tab-1" type="radio" name="tab" class="sign-in" checked>
+                        <label for="tab-1" class="tab" id="login">Login</label> 
+                        <input id="tab-2" type="radio" name="tab" class="sign-up">
+                        <label for="tab-2" class="tab" id="singup">Sign Up</label>
+                        <div class="login-space">
+                            <div class="login">
+                                <div class="group"> <label for="user" class="label">User ID</label> <br><input id="user" type="text" class="input" placeholder="Enter your username"> </div>
+                                <div class="group"> <label for="pass" class="label">Password</label> <br><input id="pass" type="password" class="input" data-type="password" placeholder="Enter your password"> </div><br>
+                                <!-- <div class="group"> <input id="check" type="checkbox" class="check" checked> <label for="check"><span class="icon"></span> Keep me Signed in</label> </div> -->
+                                <br>
+                                <div class="group"> <a href="reserve.html"> <input type="submit" class="button" value="Sign In"></a> </div>
+                                <div class="hr"></div>
+                                <div class="foot"> <a href="#">Forgot Password?</a> </div>
+                            </div>
+                            <div class="sign-up-form">
+                                <div class="group"> <label for="user" class="label">User ID</label> <input id="user" type="text" class="input" placeholder=""> </div>
+                                <div class="group"> <label for="pass" class="label">Email</label> <input id="pass" type="text" class="input" placeholder="Enter your email address"> </div>
+                                <div class="group"> <label for="pass" class="label">Password</label><input id="pass" type="password" class="input" data-type="password" placeholder="Create your password"> </div>
+                                <div class="group"> <label for="pass" class="label">Repeat Password</label><input id="pass" type="password" class="input" data-type="password" placeholder="Repeat your password"> </div>
+                                <div class="group"> <label for="pass" class="label">Upload your driving license</label><input class="input form-control form-control-sm" id="formFileSm" type="file"> </div>
+                                <div class="group"><a href="reserve.html"> <input type="submit" class="button" value="Sign Up"></a> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
