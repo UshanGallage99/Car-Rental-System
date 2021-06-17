@@ -14,18 +14,18 @@ body {
     /* height: 100%; */
     position: absolute;
     /* top: ; */
-    padding: 220px 70px 50px 70px;
+    padding: 255px 70px 50px 70px;
     background: rgba(255, 255, 255, 0.9);
     opacity: 100%;
 }
 #login{
     position: relative;
-    bottom: 130px;
+    bottom: 210px;
     columns: black;
 }
 #singup{
     position: relative;
-    bottom: 130px;
+    bottom: 210px;
     color: #e43c5c;
 }
 #user{
@@ -34,10 +34,29 @@ body {
 #pass{
     border: 1px solid #e43c5c;
 }
+#email {
+    border: 1px solid #e43c5c;
+}
+#pass {
+    border: 1px solid #e43c5c;
+}
+#rpass {
+    border: 1px solid #e43c5c;
+}
+#dlicense {
+    border: 1px solid #e43c5c;
+}
+#contact {
+    border: 1px solid #e43c5c;
+}
+#address {
+    border: 1px solid #e43c5c;
+}
+
 
 .login-snip .login,
 .login-snip .sign-up-form {
-    top: -104px;
+    top: -50px;
     left: 0;
     right: 0;
     bottom: 0;
@@ -82,7 +101,7 @@ body {
 }
 
 .login-space .group {
-    margin-bottom: 15px
+    margin-bottom: 16px
 }
 
 .login-space .group .label,

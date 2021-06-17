@@ -36,7 +36,7 @@ public class CarController {
 
     @GetMapping(path = "/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody CarDTO searchCar(@PathVariable String id){
-        CarDTO dto = service.searchCustomer(id);
+        CarDTO dto = service.searchCar(id);
         return dto;
     }
 

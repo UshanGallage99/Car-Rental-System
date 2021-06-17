@@ -17,5 +17,6 @@ public class Customer {
     private String email;
     private String password;
     private int contact;
+    private String license;
     private String address;
 }

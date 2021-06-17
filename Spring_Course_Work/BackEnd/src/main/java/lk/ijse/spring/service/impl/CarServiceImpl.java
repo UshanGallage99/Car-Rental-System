@@ -51,7 +51,7 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
-    public CarDTO searchCustomer(String id) {
+    public CarDTO searchCar(String id) {
         Optional<Car> car = repo.findById(id);
         if (car.isPresent()) {
             return mapper.map(car.get(),CarDTO.class);

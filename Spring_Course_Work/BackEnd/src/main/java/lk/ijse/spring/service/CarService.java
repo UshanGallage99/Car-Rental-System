@@ -9,6 +9,6 @@ public interface CarService {
     boolean addCar(CarDTO dto);
     boolean updateCar(CarDTO dto);
     boolean deleteCar(String id);
-    CarDTO searchCustomer(String id);
+    CarDTO searchCar(String id);
     ArrayList<CarDTO> getAllCars();
 }
