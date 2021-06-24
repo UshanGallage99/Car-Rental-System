@@ -10,5 +10,6 @@ public interface CustomerService {
     boolean deleteCustomer(String id);
     boolean updateCustomer(CustomerDTO dto);
     ArrayList<CustomerDTO> getAllCustomers();
+    CustomerDTO searchCustomerByName(String id,String password);
 
 }

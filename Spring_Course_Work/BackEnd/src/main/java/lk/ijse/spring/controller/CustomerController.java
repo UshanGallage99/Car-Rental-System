@@ -53,4 +53,8 @@ public class CustomerController {
         service.updateCustomer(dto);
         return new ResponseEntity(new StandardResponse("200","Done",dto),HttpStatus.OK);
     }
+    @GetMapping(path = "/{id}/{password}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public @ResponseBody CustomerDTO searchCustomerByName(@PathVariable String id, @PathVariable String password) {
+        return service.searchCustomerByName(id, password);
+    }
 }

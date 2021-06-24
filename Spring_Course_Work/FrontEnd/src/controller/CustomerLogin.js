@@ -285,3 +285,27 @@ $("#contact").on('keyup',function (event){
     }
 });
 
+//signup
+// $("#signIn").click(function (){
+//     let id=$("#user1").val();
+//     let pass=$("#pass1").val();
+//     $.ajax({
+//         url:`http://localhost:8080/pos/api/v1/customer/`,
+//         method:'get',
+//         async:true,
+//         contentType:'application/json',
+//         success:function (data){
+//             console.log(data);
+//             location.href = "reserve.html";
+//             alert("yo yo")
+//             // $("#txtUserId").val(data.id);
+//             // $("#txtEmail").val(data.email);
+//             // $("#txtPassword").val(data.password);
+//             // $("#txtlicense").val(data.license);
+//             // $("#txtContact").val(data.contact);
+//             // $("#txtAddress").val(data.address);
+//         }
+//     })
+//     // alert("Success !");
+// });
+
