@@ -10,6 +10,7 @@ $("#btnCarAdd").click(function (){
     let freeKmforDay = $("#txtfreeday").val();
     let freeKmforMonth = $("#txtfreemoth").val();
     let priceforExtraKm = $("#txtextrafee").val();
+    let available = $("#txtavailable").val();
     let registrationNumber = $("#txtregnumber").val();
     let color = $("#txtcolor").val();
 
@@ -29,6 +30,7 @@ $("#btnCarAdd").click(function (){
            freeKmforDay:freeKmforDay,
            freeKmforMonth:freeKmforMonth,
            priceforExtraKm:priceforExtraKm,
+           available:available,
            registrationNumber:registrationNumber,
            color:color
        }),
@@ -53,6 +55,7 @@ $("#btnCarUpdate").click(function (){
     let freeKmforDay = $("#txtfreeday").val();
     let freeKmforMonth = $("#txtfreemoth").val();
     let priceforExtraKm = $("#txtextrafee").val();
+    let available = $("#txtavailable").val();
     let registrationNumber = $("#txtregnumber").val();
     let color = $("#txtcolor").val();
 
@@ -75,6 +78,7 @@ $("#btnCarUpdate").click(function (){
                 freeKmforDay: freeKmforDay,
                 freeKmforMonth: freeKmforMonth,
                 priceforExtraKm: priceforExtraKm,
+                available:available,
                 registrationNumber: registrationNumber,
                 color: color
             }),
@@ -109,6 +113,7 @@ $("#btnCarSearch").click(function (){
            $("#txtfreeday").val(data.freeKmforDay);
            $("#txtfreemoth").val(data.freeKmforMonth);
            $("#txtextrafee").val(data.priceforExtraKm);
+           $("#txtavailable").val(data.available);
            $("#txtregnumber").val(data.registrationNumber);
            $("#txtcolor").val(data.color);
        }
@@ -159,6 +164,7 @@ $("#txtcarcode").on('keyup', function (eObj) {
                 $("#txtfreeday").val(data.freeKmforDay);
                 $("#txtfreemoth").val(data.freeKmforMonth);
                 $("#txtextrafee").val(data.priceforExtraKm);
+                $("#txtavailable").val(data.available);
                 $("#txtregnumber").val(data.registrationNumber);
                 $("#txtcolor").val(data.color);
             }
@@ -179,7 +185,7 @@ function getAllCars(){
 
         success:function (data){
             for (let cars of data) {
-                let row=`<tr><td>${cars.carId}</td><td>${cars.brand}</td><td>${cars.category}</td><td>${cars.transmission}</td><td>${cars.fuelType}</td><td>${cars.dailyRate}</td><td>${cars.monthlyRate}</td><td>${cars.freeKmforDay}</td><td>${cars.freeKmforMonth}</td><td>${cars.priceforExtraKm}</td><td>${cars.registrationNumber}</td><td>${cars.color}</td></tr>`;
+                let row=`<tr><td>${cars.carId}</td><td>${cars.brand}</td><td>${cars.category}</td><td>${cars.transmission}</td><td>${cars.fuelType}</td><td>${cars.dailyRate}</td><td>${cars.monthlyRate}</td><td>${cars.freeKmforDay}</td><td>${cars.freeKmforMonth}</td><td>${cars.priceforExtraKm}</td><td>${cars.available}</td><td>${cars.registrationNumber}</td><td>${cars.color}</td></tr>`;
                 $("#tblCar").append(row);
             }
         }
@@ -197,6 +203,7 @@ function clearcar() {
      $("#txtfreeday").val("");
      $("#txtfreemoth").val("");
      $("#txtextrafee").val("");
+     $("#txtavailable").val("");
      $("#txtregnumber").val("");
     $("#txtcolor").val("");
 }
@@ -248,6 +255,11 @@ $("#txtfreemoth").on('keyup',function (event){
     }
 });
 $("#txtextrafee").on('keyup',function (event){
+    if (event.key=="Enter"){
+        $('#txtavailable').focus();
+    }
+});
+$("#txtavailable").on('keyup',function (event){
     if (event.key=="Enter"){
         $('#txtregnumber').focus();
     }
@@ -341,14 +353,28 @@ $("#txtfreemoth").on('keyup',function (event){
 let extraFeeRegEx=/^[0-9]{1,10}$/;
 $("#txtextrafee").on('keyup',function (event){
     if (event.key=="Enter"){
-        $('#txtregnumber').focus();
+        $('#txtavailable').focus();
     }
     let inputID=$("#txtextrafee").val();
-    if (freeMonthRegEx.test(inputID)){
+    if (extraFeeRegEx.test(inputID)){
         $("#txtextrafee").css('border','1px solid green');
         $("#lblextrafee").text("");
     }else{
         $("#txtextrafee").css('border','1px solid red');
         $("#lblextrafee").text('Price for extra km must be a number');
+    }
+});
+let availableRegEx=/^[0-9]{1,10}$/;
+$("#txtavailable").on('keyup',function (event){
+    if (event.key=="Enter"){
+        $('#txtregnumber').focus();
+    }
+    let inputID=$("#txtavailable").val();
+    if (availableRegEx.test(inputID)){
+        $("#txtavailable").css('border','1px solid green');
+        $("#lblavailable").text("");
+    }else{
+        $("#txtavailable").css('border','1px solid red');
+        $("#lblavailable").text('Price for extra km must be a number');
     }
 });

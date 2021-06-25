@@ -18,6 +18,7 @@ public class CarDTO {
     private int freeKmforDay;
     private int freeKmforMonth;
     private double priceforExtraKm ;
+    private int available ;
     private String registrationNumber;
     private String color;
 }

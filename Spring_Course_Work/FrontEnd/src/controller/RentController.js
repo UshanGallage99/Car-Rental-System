@@ -5,6 +5,8 @@ function curruntDate() {
 }
 curruntDate();
 loadAllCars();
+loadAllDrivers();
+// getTotal();
 
 $("#cusID").on('keyup', function (eObj) {
     if (eObj.key == "Enter") {
@@ -32,15 +34,13 @@ $("#cmbCarCode").on("change",function (){
             console.log(data);
             $("#lblvehBrand").text(data.brand);
             $("#lblvehTrans").text(data.transmission);
-            //$("#lblvehAvailable").val(data.transmission);
+            $("#lblvehAvailable").text(data.available);
             $("#lbldalyRate").text(data.dailyRate);
             $("#lbldalyFreeKm").text(data.freeKmforDay);
             $("#lblmonthlyRate").text(data.monthlyRate);
             $("#lblmonthlyFreeKm").text(data.freeKmforMonth);
             $("#lblextraprice").text(data.priceforExtraKm);
-            // $("#txtextrafee").val(data.priceforExtraKm);
-            // $("#txtregnumber").val(data.registrationNumber);
-            // $("#txtcolor").val(data.color);
+
         },
         error:function (response){
             alert("Customer Not Found...");
@@ -64,3 +64,62 @@ function loadAllCars() {
         }
     });
 }
+//cmd disable
+var checkbox = document.querySelector("#flexRadioDefault1");
+var input = document.querySelector("#cmbDriverId");
+
+var toogleInput = function(e){
+  input.disabled = !e.target.checked;
+};
+
+toogleInput({target: checkbox});
+checkbox.addEventListener("change", toogleInput);
+
+// driver load
+function loadAllDrivers() {
+    $("#cmbDriverId").children().remove();
+    $.ajax({
+        url: 'http://localhost:8080/pos/api/v1/driver',
+        method: 'get',
+        async: true,
+
+        success: function (data) {
+            $('#cmbDriverId').append("<option>--Select--</option>");
+            for (let all of data) {
+                let row = `<option>${all.id}</option>`;
+                $("#cmbDriverId").append(row);
+            }
+        }
+    });
+}
+$("#cmbDriverId").on("change",function (){
+    let id=$("#cmbDriverId").val();
+    $.ajax({
+        url:`http://localhost:8080/pos/api/v1/driver/${id}`,
+        method:'get',
+        async:true,
+        contentType:'application/json',
+        success:function (data){
+            console.log(data);
+            $("#lblDriverName").text(data.name);
+            $("#lblDContact").text(data.contact);
+             
+             
+        },
+        error:function (response){
+            alert("Customer Not Found...");
+        }
+    });
+});
+// function getTotal() {
+//     let date1=$("#pickup").val();
+//     let date2=$("#return").val();
+//     var label = $('#lbldalyRate').text()
+//
+//     let diffDays = date2 - date1;
+//     let total=diffDays*label;
+//     alert("helo");
+//     console.log(label);
+//     $("#total").text(total);
+// }
+

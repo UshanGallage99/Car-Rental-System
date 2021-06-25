@@ -37,7 +37,7 @@
                     <div class="row p-0 mt-1">
                         <div class="form-group col-6">
                             <lable>Reservation ID :</lable>
-                            <label type="text" id="resID">njwdnjnnjdj</label>
+                            <label type="text" id="resID">R-001</label>
                         </div>
                         <div class="form-group col-6">
                             <lable>Date :</lable>
@@ -76,59 +76,47 @@
                             <div class="bg-white card col-6">
                                 <div class="form-group col-12">
                                     <lable> Name :</lable>
-                                    <label type="" id="lblvehBrand">Toyota</label>
+                                    <label type="" id="lblvehBrand"></label>
                                 </div>
                                 <div class="form-group col-12">
                                     <lable> Transmission :</lable>
-                                    <label type="" id="lblvehTrans">Manual</label>
+                                    <label type="" id="lblvehTrans"> </label>
                                 </div>
                                 
                                 <div class="form-group col-12">
                                     <lable>Available :</lable>
-                                    <label type="" id="lblvehAvailable">7</label>
+                                    <label type="" id="lblvehAvailable"></label>
                                 </div>
                                 <div class="form-group col-12">
                                     <lable>Daily Rate (Rs) :</lable>
-                                    <label type="" id="lbldalyRate">2500.00</label>
+                                    <label type="" id="lbldalyRate"></label>
                                 </div>
                                 <div class="form-group col-12">
                                     <lable>Free Km for a Day :</lable>
-                                    <label type="" id="lbldalyFreeKm">100</label>
+                                    <label type="" id="lbldalyFreeKm"></label>
                                 </div>
                                 <div class="form-group col-12">
                                     <lable>Monthly Rate (Rs) :</lable>
-                                    <label type="" id="lblmonthlyRate">64,350.00</label>
+                                    <label type="" id="lblmonthlyRate"></label>
                                 </div>
                                 <div class="form-group col-12">
                                     <lable>Free Km for a Month :</lable>
-                                    <label type="" id="lblmonthlyFreeKm">2400</label>
+                                    <label type="" id="lblmonthlyFreeKm"></label>
                                 </div>
                                 <div class="form-group col-12">
                                     <lable>Price per Extra Km (Rs) :</lable>
-                                    <label type="" id="lblextraprice">30.00</label>
+                                    <label type="" id="lblextraprice"></label>
                                 </div>
                             </div>  
                     </div>
                     <hr> 
                     <div class="row p-0 mt-2">
-                    <div class="form-check col-3">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                          With Driver
-                        </label>
-                      </div>
-                      <div class="form-check col-3">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                        <label class="form-check-label" for="flexRadioDefault2">
-                          Without Driver
-                        </label>
-                      </div>
+
                       <div class="form-check col-6">
                         <label for="pickup">Pick Up :</label>
                         <input type="date" id="pickup" name="pickup">
                       </div>
-                      <br>
-                      <div class="form-check col-6" style="position: relative; left: 359px; top: 5px;">
+                      <div class="form-check col-6" >
                         <label for="Return">Return :</label>
                         <input type="date" id="return" name="return">
                       </div>
@@ -148,7 +136,7 @@
                         
                     </div>
                     <div class="form-group col-12">
-                        <a href="customerlogin.html" class="btn-service scrollto">RESERVE NOW</a>
+                        <a href="customerlogin.html" class="btn-service scrollto" id="btnReserve">RESERVE NOW</a>
                     </div>         
                 </div>                
                 </div>
@@ -157,41 +145,91 @@
         <div class="col-xl-4">
             <div class="bg-white card">
                 <div class="card-header" style="font-size: 20px; background: #ffffff; color: #e43c5c;">
-                    Reservation Summary
+                    Driver Details
                 </div>
-            
-            <div class="form-group col-12">
-                <lable> Car Code :</lable>
-                <label type="" id="carCode">jnnjn</label>
-                 
-            </div>
-            <div class="form-group col-12">
-                <lable> Name :</lable>
-                <label type="" id="vehBrand">Toyota</label>   
-            </div>
-            <div class="form-group col-12">
-                <lable> Qty :</lable>
-                <label type="" id="qty">2</label>   
-            </div>
-            <div class="form-group col-12">
-                <lable> Time Range :</lable>
-                <label type="" id="timeRange">100 Days</label>   
-            </div>
-            <hr>
-            <div class="form-group col-12 bg-warning" style="height: 64px; font-size: 25px;">
-                <div style="position:relative; top: 14px; left: 53px;">
-                <lable> Total (Rs) :</lable>
-                <label type="" id="total">120,230.00</label>   
-                </div>
-            </div>
-            <div class="form-group col-12">
-                <a href="index.html" class="btn-complete scrollto">COMPLETE RESERVATION</a>
-            </div>
-        </div>
+                <div class="row p-0 mt-2">
 
-            
-             
+                    <div class="form-check col-6" id="cheqbox1">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1" >With Driver</label>
+                    </div>
+
+
+                    <div class="form-check col-6" >
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                        <label class="form-check-label" for="flexRadioDefault2">Without Driver</label>
+                    </div>
+                </div>
+
+            <br>
+            <div class="row p-0 mt-1">
+                <div class="form-check col-3">
+                    <lable> Driver Id :</lable>
+                </div>
+                <div class="form-check col-8">
+                <select aria-label="Default select example" class="form-select" id="cmbDriverId"></select>
+                </div>
+            </div>
+                <div class="row p-0 mt-1">
+                    <div class="form-check col-3">
+                        <lable>Name :</lable>
+                    </div>
+                    <div class="form-check col-8">
+                        <lable id="lblDriverName"></lable>
+                    </div>
+                </div>
+                <div class="row p-0 mt-1">
+                    <div class="form-check col-3">
+                        <lable>Contact :</lable>
+                    </div>
+                    <div class="form-check col-8">
+                        <lable id="lblDContact"></lable>
+                    </div>
+                </div>
+                 
+
         </div>
+        </div>
+            <div class="col-xl-4" style="position: absolute; top: 300px; right: 115px;">
+                <div class="bg-white card">
+                    <div class="card-header" style="font-size: 20px; background: #ffffff; color: #e43c5c;">
+                        Reservation Summary
+                    </div>
+
+                    <div class="form-group col-12">
+                        <lable>Daily Total :</lable>
+                        <label type="" id="carCode"></label>
+
+                    </div>
+                    <div class="form-group col-12">
+                        <lable>Monthly Total :</lable>
+                        <label type="" id="vehBrand"></label>
+                    </div>
+                    <div class="form-group col-12">
+                        <lable> Qty :</lable>
+                        <label type="" id="qty"></label>
+                    </div>
+                    <div class="form-group col-12">
+                        <lable>Extra Km :</lable>
+                        <label type="" id="extra"></label>
+                    </div>
+                    <div class="form-group col-12">
+                        <lable>Time Range :</lable>
+                        <label type="" id="timeRange"></label>
+                    </div>
+                    <hr>
+                    <div class="form-group col-12 bg-warning" style="height: 64px; font-size: 25px;">
+                        <div style="position:relative; top: 14px; left: 53px;">
+                            <lable>Total (Rs) :</lable>
+                            <label type="" id="total"></label>
+                        </div>
+                    </div>
+                    <div class="form-group col-12">
+                        <a href="index.html" class="btn-complete scrollto">COMPLETE RESERVATION</a>
+                    </div>
+                </div>
+            </div>
+
         
     
     </div>
